@@ -19,7 +19,7 @@ const AppCounter = () => {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting="Hola a Todos, soy un Componente React"/>
+      <ItemListContainer greeting="Bienvenidos a LauXpress, tu lugar"/>
 
 
       <div
