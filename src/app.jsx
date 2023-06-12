@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
+import MainRouter from "./router/MainRouter";
 
 const AppCounter = () => {
   const [count, setCount] = useState(0);
@@ -16,6 +17,8 @@ const AppCounter = () => {
   return (
     <div className="App">
       <NavBar />
+      <MainRouter/>
+      <ItemListContainer greeting="Bienvenidos a LauXpress, tu lugar"/>
     </div>
   );
 };

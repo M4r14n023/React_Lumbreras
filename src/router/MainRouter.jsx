@@ -1,17 +1,21 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Products from '../pages/Products'
 import NavBar from '../components/NavBar'
-import ProductDetail from '../pages/ProductDetail'
+import Home from '../pages/Home'
+import Category from '../pages/Category'
+import Item from '../pages/Item'
+
+
+
 
 const MainRouter = () => {
   return (
     <Router>
         <Routes>
             <NavBar/>
-            <Route exact path="*" element={<Home />}/>
-            <Route exact path="/products" element={<Products />}/>
-            <Route exact path="/products/:productsId" element={<ProductDetail />}/>
+            <Route path="/" element={<Home />}/>
+            <Route path="/category/:categotyId" element={<Category />}/>
+            <Route path="/item/:itemId" element={<Item />}/>
         </Routes>
     </Router>
   )

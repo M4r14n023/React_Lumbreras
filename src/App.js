@@ -4,6 +4,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from "./components/ItemListContainer";
+import MainRouter from "./router/MainRouter";
 
 const AppCounter = () => {
   const [count, setCount] = useState(0);
@@ -19,6 +20,7 @@ const AppCounter = () => {
   return (
     <div className="App">
       <NavBar />
+      <MainRouter/>
       <ItemListContainer greeting="Bienvenidos a LauXpress, tu lugar"/>
 
 
