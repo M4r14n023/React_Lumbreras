@@ -1,17 +1,13 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
-import MainRouter from '../router/MainRouter'
-import ItemListContainer from '../components/ItemListContainer'
-<components />
+import React from "react";
+import ItemListContainer from "../components/ItemListContainer";
+import { ProductsData } from "../json/Products";
 
 const Home = () => {
   return (
-    <div className="App">
-      <NavBar />
-      <MainRouter/>
-      <ItemListContainer greeting="Bienvenidos a LauXpress, tu lugar"/>
-
+    <div>
+      <ItemListContainer productsData={ProductsData} />
     </div>
-  )}
+  );
+};
 
-export default Home
+export default Home;

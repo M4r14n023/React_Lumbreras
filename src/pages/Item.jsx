@@ -1,9 +1,14 @@
 import React from 'react'
+import ItemDetailContainer from '../components/ItemDetailContainer'
+import {ProductsData} from '../json/Products'
+import { useParams } from 'react-router-dom'
 
 const Item = () => {
-  return (
-    <div>Item</div>
-  )
+  const {itemId} = useParams()
+
+  const productsFilterByCategory = ProductsData.filter(products => products.id === parseInt(itemId));
+  return 
+      <ItemDetailContainer productsData={productsFilterByCategory}  />;
 }
 
-export default Item
+export default Item;
