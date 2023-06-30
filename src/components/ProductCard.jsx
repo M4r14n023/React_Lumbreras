@@ -1,18 +1,73 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import React from "react";
+import CartButtons from "./CartButtons";
+import { Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ productData }) => {
+  const customStyleNoStock = {
+    backgroundColor: "danger",
+    buttonState: "disabled",
+  };
+  const customStyleStock = {
+    backgroundColor: "primary",
+    buttonState: "",
+  };
   return (
-    <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src={product.images[0]} />
-    <Card.Body>
-      <Card.Title>product.title</Card.Title>
-      <Card.Text>product.desciption</Card.Text>
-      <link to={`/item/${productData.id}`}>Ir a Detalle</link>
-    </Card.Body>
-  </Card>
-  )
-}
+    <Card style={{ width: "18rem", margin: "10px 0" }}>
+      <Card.Img variant="top" src={productData.image} />
+      <Card.Body>
+        <Card.Title>{productData.title}</Card.Title>
+        <Card.Text>{productData.description}</Card.Text>
+        {/* {productData.stock < 100 ? <div>Sin stock</div> : <CartButtons />} */}
+        <div>{productData.stock < 10 ? "Ultimos Productos" : ""} </div>
+        {productData.stock < 10 ? (
+          <CartButtons customStyle={customStyleNoStock} productId={productData.id}/>
+        ) : (
+          <CartButtons customStyle={customStyleStock} productId={productData.id}/>
+        )}
 
-export default ProductCard
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <Link
+            to={`/item/${productData.id}`}
+            style={{
+              marginTop: "10px",
+              backgroundColor: "#007bff",
+              textDecoration: "none",
+              color: "white",
+              borderRadius: "5px",
+              fontSize: "18px",
+              padding: "10px",
+            }}
+          >
+            Ir a detalle
+          </Link>
+          <Link
+            to={`/update-product/${productData.id}`}
+            style={{
+              marginTop: "10px",
+              backgroundColor: "green",
+              textDecoration: "none",
+              color: "white",
+              borderRadius: "5px",
+              fontSize: "18px",
+              padding: "10px",
+            }}
+          >
+            Modificar producto
+          </Link>
+        </div>
+      </Card.Body>
+    </Card>
+  );
+};
+
+export default ProductCard;

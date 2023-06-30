@@ -1,18 +1,22 @@
-import React from 'react'
-import ProductCard from '../components/ProductCard'
-
-const ItemListContainer = ({productsData}) => {
+import React from "react";
+import ProductCard from "../components/ProductCard";
+const ItemListContainer = ({ productsData }) => {
   return (
-    <div>
-      {
-        ProductsData.map(product => {
-          return
-          <ProductCard key={product.id} productsData={product}/>
-        })
-      }
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        width: "90vw",
+        height: "100%",
+        justifyContent: "space-around",
+      }}
+    >
+      
+      {productsData.map((product) => {
+        return <ProductCard key={product.id} productData={product} />;
+      })}
     </div>
-    
-  )
-}
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;
