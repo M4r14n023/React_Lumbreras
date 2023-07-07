@@ -24,7 +24,7 @@ const Item = () => {
       .then(() => setLoading(false));
   }, [itemId]);
 
-  return <ItemDetailContainer productsData={productsData} />;
+  return <ItemDetailContainer productsData={ProductsData} />;
 };
 
 export default Item;

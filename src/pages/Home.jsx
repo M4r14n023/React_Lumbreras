@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemListContainer from "../components/ItemListContainer";
-// import { ProductsData } from "../json/Products";
+import { ProductsData } from "../json/Products";
 // import axios from "axios";
 
 import { collection, getDocs, getFirestore } from "firebase/firestore";
@@ -49,7 +49,7 @@ const Home = () => {
       ) : welcome ? (
         <div>Bienvenido</div>
       ) : (
-        <ItemListContainer productsData={productsData} />
+        <ItemListContainer productsData={ProductsData} />
       )}
     </div>
   );

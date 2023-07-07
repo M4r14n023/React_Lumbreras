@@ -31,7 +31,7 @@ const Category = () => {
       .then(() => setLoading(false));
   }, [categoryId]);
 
-  return <ItemListContainer productsData={productsData} />;
+  return <ItemListContainer productsData={ProductsData} />;
 };
 
 export default Category;
